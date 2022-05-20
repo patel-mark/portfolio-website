@@ -1,0 +1,61 @@
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadowprimary {
+    text-shadow: 1px 1px 3px $primarycolor;
+}
+
+@mixin shadowblack {
+    text-shadow: 2px 2px 5px $baiscColor;
+}
+
+.home{
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/background/IMG_20201225_174637_070\ \(2\).jpg");
+    background-position: top;
+    background-size: cover;
+    margin-top: 60px;
+
+
+    &__content{
+        padding: 10px 60px;
+
+        @media only screen and (max-width: 769px){
+            padding-left: 20px;
+        }
+    }
+
+    &__1{
+        color: $primarycolor;
+        @include shadowblack();
+        margin-top: 30px;
+    }
+    &__2{
+        @include shadowprimary();
+        font-size: 3rem;
+        text-transform: capitalize;
+        margin-top: -5px;
+
+        
+        @media only screen and (max-width: 769px){
+            font-size: 1.5rem;
+        }
+
+    }
+    &__3{
+        @include shadowprimary();
+        font-size: 1.5rem;
+        margin-top: -15px;
+        text-transform: capitalize;
+
+        
+        
+        @media only screen and (max-width: 769px){
+            font-size: 1rem;
+        }
+    }
+}

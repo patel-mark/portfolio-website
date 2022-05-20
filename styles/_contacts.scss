@@ -1,0 +1,96 @@
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadowprimary {
+    text-shadow: 1px 1px 3px $primarycolor;
+}
+
+@mixin shadowblack {
+    text-shadow: 2px 2px 5px $baiscColor;
+}
+
+.contacts{
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    padding: 20px 0;
+   
+    
+    h2{
+        @include flexbox();
+        @include shadowprimary();
+        text-transform: capitalize;
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(15rem,15rem));
+        grid-gap: 1rem;
+        justify-content: space-evenly;
+        padding: 0 50px;
+    }
+
+    &__image-content{
+        background-image: url("../images/contact/undraw_contact_us_15o2.png");
+        background-position: center;
+        background-size: cover;
+        width: 15rem;
+        height: 20rem;
+        border: 1px solid $primarycolor;
+        border-radius: 18px;
+
+        h3{
+            width: 100%;
+            text-transform: capitalize;
+            margin: 10px;
+            @include shadowprimary();
+        }
+    }
+
+    &__address-content{
+        width: 100%;
+        display: block;
+
+        ul{
+
+            li{
+                list-style: none;
+                padding: 15px 0px;
+                color: $cardcolor;
+
+                i{
+                    padding: 0px 5px;
+                }
+            }
+        }
+    }
+
+    &__links-content{
+        width: 100%;
+        
+        ul{
+
+            li{
+                list-style: none;
+                padding: 10px 0px;
+
+                a{
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    color: $cardcolor;
+                    @include shadowblack();
+
+                    &:hover{
+                        color: $primarycolor;
+                    }
+
+                    i{
+                        padding: 0px 5px;
+                    }
+                }
+            }
+        }
+    }
+}

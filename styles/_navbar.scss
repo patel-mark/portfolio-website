@@ -1,0 +1,111 @@
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadowprimary {
+    text-shadow: 1px 1px 3px $primarycolor;
+}
+
+@mixin shadowblack {
+    text-shadow: 2px 2px 5px $baiscColor;
+}
+.navbar{
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+    background-color: black;
+
+
+    &__logo{
+        display: flex;
+        height: 60px;
+        position: absolute;
+        left: 25px;
+        align-items: center;
+
+        p{
+            font-size: 1.3rem;
+            text-transform: capitalize;
+            @include shadowprimary();
+
+            span{
+                color:$primarycolor;
+                @include shadowblack();
+            }
+        }
+    }
+
+    &__list{
+        height: 60px;
+        width: 95%;
+        @media only screen and (max-width: 769px){
+            width: 100vw;
+        }
+        
+
+        ul{
+           width: 100%;
+           @include flexbox();
+          
+           @media only screen and (max-width: 769px){
+            display: none;
+            width: 100vw;
+            margin-top: 60px;
+            background-color:rgb(24, 22, 22);
+            position: relative;
+            justify-content: center;
+           
+        }
+
+           li{
+               margin: 0px 20px;
+               list-style: none;
+               @media only screen and (max-width: 769px){
+                   padding:10px 0;
+                   margin-right: 50px;
+               }
+
+               a{
+                   text-decoration: none;
+                   text-transform: capitalize;
+                   font-size: 1.1rem;
+                   color: $baiscColor;
+                   @include shadowprimary();
+
+                   &:hover{
+                       color: $primarycolor;
+                   }
+                   &:active{
+                       color: $primarycolor;
+                   }
+               }
+           }
+        }
+    }
+
+    &__toggle{
+        position: absolute;
+        @include flexbox();
+        height: 60px;
+        right: 35px;
+        
+        @media only screen and (min-width: 769px){
+           display: none; 
+        }
+
+        i{
+            color: $baiscColor;
+            @include shadowprimary();
+            font-size: 1.2rem;
+
+            &:hover{
+                color: $primarycolor;
+            }
+        }
+    }
+}

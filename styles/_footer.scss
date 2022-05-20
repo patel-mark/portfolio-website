@@ -1,0 +1,32 @@
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadowprimary {
+    text-shadow: 1px 1px 3px $primarycolor;
+}
+
+@mixin shadowblack {
+    text-shadow: 2px 2px 5px $baiscColor;
+}
+
+.footer{
+    width: 100%;
+    background: $baiscColor;
+    color: $primarycolor;
+    padding-top: 20px;
+
+    &__content{
+        width: 100%;
+    }
+
+    &__descript-content{
+        @include flexbox();
+    }
+
+    &__copy-content{
+        @include flexbox();
+    }
+}

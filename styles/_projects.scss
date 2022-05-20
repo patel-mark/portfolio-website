@@ -1,0 +1,207 @@
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexbox_icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@mixin shadowprimary {
+    text-shadow: 1px 1px 3px $primarycolor;
+}
+
+@mixin shadowblack {
+    text-shadow: 2px 2px 5px $baiscColor;
+}
+
+.projects{
+    width: 100%;
+    background-color:rgb(12, 11, 11);
+    padding: 20px 0;
+
+    h2{
+        @include flexbox();
+        text-transform: capitalize;
+        @include shadowprimary();
+    }
+
+    &__cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(16rem,13rem));
+        grid-gap: 1rem;
+        justify-content: space-evenly;
+        padding: 0 50px;
+    }
+
+    //card 1
+    &__card1{
+        background-color:$cardcolor;
+        height: 20rem;
+        border-radius: 18px;
+        border: 1px solid $primarycolor;
+    }
+
+    &__image-card1{
+        background-image: url("../images/projects/pexels-pixabay-277253.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 10rem;
+        border-top-right-radius:18px;
+        border-top-left-radius: 18px;
+    }
+
+    &__content-card1{
+        width: 100%;
+
+        h3{
+            @include flexbox();
+            text-transform: capitalize;
+        }
+        p{
+            display: flex;
+            text-align: center;
+        }
+    }
+
+    &__icons-card1{
+        width: 100%;
+        @include flexbox_icons();
+        margin: 10px;
+    }
+    &__thumb-icons{
+
+        i{
+            @include shadowprimary();
+        }
+    }
+    &__link-icons{
+
+        a{
+            text-decoration: none;
+            text-transform: capitalize;
+            @include shadowprimary();
+            color: $baiscColor;
+            padding: 10px 15px;
+            background: $baiscColor;
+            border-radius: 18px;
+            border: 1px solid $primarycolor;
+
+            &:hover{
+                color: $primarycolor;
+            }
+        }
+
+    }
+
+    //card 2
+    &__card2{
+        background-color: $cardcolor;
+        height: 20rem;
+        border-radius: 18px;
+        border: 1px solid $primarycolor;
+    }
+
+    &__image-card2{
+        background-image: url("../images/projects/pexels-lisa-1279330.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 10rem;
+        border-top-right-radius:18px;
+        border-top-left-radius: 18px;
+    }
+
+    &__content-card2{
+        width: 100%;
+
+        h3{
+            @include flexbox();
+            text-transform: capitalize;
+        }
+        p{
+            display: flex;
+            text-align: center;
+        }
+    }
+
+    &__icons-card2{
+        width: 100%;
+        @include flexbox_icons();
+        margin: 10px;
+    } 
+    
+    //card 3
+    &__card3{
+        background-color:$cardcolor;
+        height: 20rem;
+        border-radius: 18px;
+        border: 1px solid $primarycolor;
+    }
+
+    &__image-card3{
+        background-image: url("../images/projects/pexels-tracy-le-blanc-607812.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 10rem;
+        border-top-right-radius:18px;
+        border-top-left-radius: 18px;
+    }
+
+    &__content-card3{
+        width: 100%;
+
+        h3{
+            @include flexbox();
+            text-transform: capitalize;
+        }
+        p{
+            display: flex;
+            text-align: center;
+        }
+    }
+
+    &__icons-card3{
+        width: 100%;
+        @include flexbox_icons();
+        margin: 10px;
+    } 
+    
+    //card 4
+    &__card4{
+        background-color:$cardcolor;
+        height: 20rem;
+        border-radius: 18px;
+        border: 1px solid $primarycolor;
+    }
+
+    &__image-card4{
+        background-image: url("../images/projects/be2b33e4685fd00661ff471fa6263f3f.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 10rem;
+        border-top-right-radius:18px;
+        border-top-left-radius: 18px;
+    }
+
+    &__content-card4{
+        width: 100%;
+
+        h3{
+            @include flexbox();
+            text-transform: capitalize;
+        }
+        p{
+            display: flex;
+            text-align: center;
+        }
+    }
+
+    &__icons-card4{
+        width: 100%;
+        @include flexbox_icons();
+        margin: 10px;
+    }    
+
+}
